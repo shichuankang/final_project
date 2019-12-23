@@ -30,3 +30,41 @@
 ## 目标
 * 前期目标：app自动为图片添加标签，用户搜索标签找到图片。
 * 后期目标：app根据标签给图片进行分类。
+## API使用与输出
+1. 百度云通用物体和场景识别API
+* 接口描述：该请求用于通用物体及场景识别，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的多个物体及场景标签。
+* HTTP 方法：POST
+* 请求URL： https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general
+* 输入代码
+```
+# encoding:utf-8
+
+import requests
+import base64
+
+'''
+通用物体和场景识别
+'''
+
+request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general"
+# 二进制方式打开图片文件
+f = open(r'C:\Users\我我我\Desktop\9.jpg', 'rb')  #上传想识别物体的照片
+img = base64.b64encode(f.read())
+
+params = {"image":img}
+access_token = '24.864ce070899da72bdcb9b2bd15defda5.2592000.1579690807.282335-18092023'
+request_url = request_url + "?access_token=" + access_token
+headers = {'content-type': 'application/x-www-form-urlencoded'}
+response = requests.post(request_url, data=params, headers=headers)
+if response:
+    print (response.json())
+```
+* 输出结果
+```
+{'log_id': 7694512957233731095, 'result_num': 5, '
+ result': [{'score': 0.190906, 'root': '植物-树', 'keyword': '树'}, 
+ {'score': 0.142538, 'root': '交通工具-轮船', 'keyword': '木船'}, 
+ {'score': 0.095388, 'root': '非自然图像-艺术画', 'keyword': '油画'}, 
+ {'score': 0.048282, 'root': '建筑-室内', 'keyword': '室内一角'}, 
+ {'score': 0.002822, 'root': '交通工具-轮船', 'keyword': '轮船'}]}
+```
