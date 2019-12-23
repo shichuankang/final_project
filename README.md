@@ -48,7 +48,7 @@ import base64
 
 request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general"
 # 二进制方式打开图片文件
-f = open(r'C:\Users\我我我\Desktop\9.jpg', 'rb')  #上传想识别物体的照片
+f = open(r'C:\Users\我我我\Desktop\9.jpg', 'rb')
 img = base64.b64encode(f.read())
 
 params = {"image":img}
@@ -68,3 +68,34 @@ if response:
  {'score': 0.048282, 'root': '建筑-室内', 'keyword': '室内一角'}, 
  {'score': 0.002822, 'root': '交通工具-轮船', 'keyword': '轮船'}]}
 ```
+2. 百度云图像风格转换API
+* 接口描述：将图像转化成卡通画或素描风格。
+* HTTP 方法：POST
+* 请求URL： https://aip.baidubce.com/rest/2.0/image-process/v1/style_trans
+* 输入代码
+```
+# encoding:utf-8
+
+import requests
+import base64
+
+'''
+图像风格转换
+'''
+
+request_url = "https://aip.baidubce.com/rest/2.0/image-process/v1/style_trans"
+# 二进制方式打开图片文件
+f = open(r'C:\Users\我我我\Desktop\9.jpg', 'rb')
+img = base64.b64encode(f.read())
+
+params = {"image":img}
+access_token = '24.a0cff753e5846c3d480085f3b77be208.2592000.1579705686.282335-18093245'
+request_url = request_url + "?access_token=" + access_token
+headers = {'content-type': 'application/x-www-form-urlencoded'}
+response = requests.post(request_url, data=params, headers=headers)
+if response:
+    print (response.json())
+```
+* 输出示例
+![示例图片](https://upload-images.jianshu.io/upload_images/9734328-da0b020b4b7e5191.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![转换结果](https://upload-images.jianshu.io/upload_images/9734328-8fb86260242a3281.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
