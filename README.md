@@ -9,37 +9,56 @@
 | 开发者   | 施传康       |
 
 ## 价值主张设计
-### 产品定位
-> 本产品是一个智能手机相册app，使用通用物体和场景识别api识别图片主体内容，帮助用户给每张图片添加标签，给用户提供一个整洁有序的相册。用户还可以一键转换图片风格，让用户的图片变的更有趣。
-### 目标用户
-> 喜欢用手机拍照记录生活的手机使用群体
-### 市场背景
-> 目前市场上的手机相册app都没有自动为照片添加标签的功能，只能用户自己给照片进行分组，不然相册都很乱，难以第一时间找到自己要的照片。
+
 ### 加值宣言
-> 本app使用通用物体和场景识别api实现app自动给图片添加标签的主要功能，使用百度云图像风格转换api让用户可以一键转换图片风格。希望本app能帮助到用户，让其有存在的价值。
-### 用户痛点
-> 手机拍照非常方便，大家平常都喜欢随手拍下各种照片来记录生活，日积月累整个相册凌乱不堪，用户难以第一时间找到自己想要的照片。
-> 用户想要转换图片的风格只能下载专门的美图软件。
+手机拍照非常方便，大家平常都喜欢随手拍下各种照片来记录生活，日积月累整个相册凌乱不堪，用户难以第一时间找到自己想要的照片。本app使用通用物体和场景识别api实现app自动给图片添加标签的主要功能，使用百度云图像风格转换api实现让用户可以一键转换图片风格的辅助功能。帮助用户解决了问题的同时也让用户有了更好的体验。
+#### 功能优先级
+* 主要：通用物体和场景识别api：支持超过10万类常见物体和场景识别，接口返回图片内1个或多个物体的名称
+* 次要：图像风格转换api：将图像转换成卡通画或素描风格，可用于开展趣味活动
+
 ### 核心价值
-* 通用物体和场景识别：通过通用图像识别识别图片内容，添加一个内容标签
-* 图像风格转换：通过图像风格转换api一键转换图片风格
-### 用到的api
-* 百度云通用物体和场景识别api
-* 百度云图像风格转换api
-### 用户画像
-* 张小姐：大学刚毕业，旅游爱好者，喜欢用手机记录旅游点滴，日积月累手机图片超级多，想找图片时很难找到，使用了本app后解决了此烦恼。
-* 王同学：大学生，喜欢拍照，喜欢二次元，手机图片很多，难以第一时间找到，想转换图片风格只能打开p图软件，使用了本app后解决了找不到图片的烦恼，也能一键转换图片风格，不用再专门打开p图软件。
-### 目标
-* 前期目标：1.app自动为图片添加标签，用户搜索标签找到图片。2.一键转换图片风格。
-* 后期目标：app根据标签给图片进行分类。
+* 通用物体和场景识别：最小可用产品为通过通用图像识别识别图片内容，添加一个内容标签
+* 图像风格转换：最小可用产品为转换图片风格
+
+### 核心价值与用户痛点
+ |  核心价值 | 用户痛点 |
+ | -- | -- |
+ |  **标签化** | 当手机图片较多时难以第一时间找到自己想要的图片。 |
+ |  **转换风格** | 用户想要让自己的图片变得有趣时只能打开另外的美图软件。 |
+
+
+### 人工智能概率性与用户痛点
+
+![测试1](https://upload-images.jianshu.io/upload_images/9734328-8ac37409bd07fd71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+当图片主体在图片中占比较小时，会出现识别出错误结果的情况。
+
+![测试2](https://upload-images.jianshu.io/upload_images/9734328-2616efc88b85f9f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+当图片色调较暗时，主体不突出时，会出现识别出错误结果的情况。
+
+![测试3](https://upload-images.jianshu.io/upload_images/9734328-a7b071d189611494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+当图片主体较多时，会识别出较为突出的那个主体。
+
+* 当图片主体较小时，识别出错的概率较大。
+* 当图片色调较暗时，识别出错的概率较大。
+* 当图片主体较多时，识别的结果为较突出的主体。
+
+### 需求列表与人工智能API加值
+|  用户需求  | API接口  | 重要程度  |
+|  ----  | ----  | ----  |
+| 在相册中快速找到自己想找的图片  | 通用物体和场景识别api | 重要 |
+| 一键给图片转换风格，让图片变有趣 | 图像风格转换api | 次重要 |
+
 
 ## 产品原型
 ### 交互及界面设计
-#### 启动页与首页
+#### app启动页与首页
 
 ![首页与启动页](https://upload-images.jianshu.io/upload_images/9734328-cab9ad1c0ae716be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 拍照识别
+#### 拍照识别流程图
 
 ![拍照识别](https://upload-images.jianshu.io/upload_images/9734328-2118085d065481f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -47,13 +66,23 @@
 
 ![查看相册](https://upload-images.jianshu.io/upload_images/9734328-71b8891fe3a5f5df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 查找图片
+#### 查找图片流程图
 
 ![查找图片](https://upload-images.jianshu.io/upload_images/9734328-b35c092408429cd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 转换风格
+#### 图片转换风格流程图
 
 ![转换风格](https://upload-images.jianshu.io/upload_images/9734328-f578808cdda2a6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 信息设计
+
+#### 图片识别api输出结果
+
+![输出结果1](https://upload-images.jianshu.io/upload_images/9734328-a119a59bc694ff42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 图像风格转换api输出结果
+
+![输出结果2](https://upload-images.jianshu.io/upload_images/9734328-f223565f575d1386.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 产品架构图
 
@@ -133,15 +162,7 @@ if response:
 ![转换结果](https://upload-images.jianshu.io/upload_images/9734328-4934cc515686e0f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ### API概率性
 
-![测试1](https://upload-images.jianshu.io/upload_images/9734328-8ac37409bd07fd71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-当图片主体在图片中占比较小时，会出现识别出错误结果的情况。
 
-![测试2](https://upload-images.jianshu.io/upload_images/9734328-2616efc88b85f9f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-当图片色调较暗时，主体不突出时，会出现识别出错误结果的情况。
-
-![测试3](https://upload-images.jianshu.io/upload_images/9734328-a7b071d189611494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-当图片主题较多时，会识别出较为突出的那个主体。
 ### 使用对比分析
 * 腾讯云图像分析api
 > 使用链接：https://cloud.tencent.com/product/tiia
