@@ -110,5 +110,30 @@ if response:
 当图片色调较暗时，主体不突出时，会出现识别出错误结果的情况。
 
 ![测试3](https://upload-images.jianshu.io/upload_images/9734328-a7b071d189611494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 当图片主题较多时，会识别出较为突出的那个主体。
+## 使用对比分析
+* 腾讯云图像分析api
+> 使用链接：https://cloud.tencent.com/product/tiia
+
+![腾讯云图像分析api](https://upload-images.jianshu.io/upload_images/9734328-3ce08b55d59c7cce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+* 阿里云图像识别api
+> 使用链接：https://ai.aliyun.com/image?spm=5176.224200.100.129.378e6ed64FHJPe&aly_as=1V0J2MRH
+
+![阿里云图像识别api](https://upload-images.jianshu.io/upload_images/9734328-35ce181506335927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+* 百度云通用物体和场景识别api
+> 使用链接：https://ai.baidu.com/tech/imagerecognition/general
+
+![百度云通用物体和场景识别api](https://upload-images.jianshu.io/upload_images/9734328-014c1eb698f1ffb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+* 对比分析
+1. 通过3家图像识别api对同一张图片分析的结果可以看出，百度云通用物体和场景识别api识别出正确结果的概率大于其他2家api。
+2. 价格方面，腾讯云与阿里云收费都为2.5元/千张，百度云的收费为2元/千张，低于其他2家。
+
+* 总结
+1. 虽然百度云通用物体和场景识别api在使用中也会出现识别出错的情况，但对比市场上其他相同类型的图像识别api，识别出正确结果的概率要大一些，而且价格方面也比其他的低，因此本app选择百度云通用物体和场景识别api作为主要功能使用的api。
+2. 本app使用的另一个api为百度云图像风格转换api，查找了其他云平台，没有发现有类似的api，但此api不是分析类型的api，因此不会出现出错的情况。
+
 
