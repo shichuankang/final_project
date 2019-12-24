@@ -1,8 +1,8 @@
-# 相册管家
+# 印相--您的专属相册管家
 
 | 发布日期 | 2019.12.8    |
 | -------- | ------------ |
-| 产品名称 | 相册管家 |
+| 产品名称 | 印相         |
 | 文档状态 | 进行中       |
 | 文件主人 | 施传康       |
 | 设计者   | 施传康       |
@@ -36,8 +36,25 @@
 ## 产品原型
 ### 交互及界面设计
 #### 启动页与首页
-![启动页.png](https://upload-images.jianshu.io/upload_images/9734328-38b245925931eb4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![首页.png](https://upload-images.jianshu.io/upload_images/9734328-3153b52232b6e04b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![首页与启动页](https://upload-images.jianshu.io/upload_images/9734328-cab9ad1c0ae716be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 拍照识别
+
+![拍照识别](https://upload-images.jianshu.io/upload_images/9734328-2118085d065481f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 查看相册
+
+![查看相册](https://upload-images.jianshu.io/upload_images/9734328-71b8891fe3a5f5df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 查找图片
+
+![查找图片](https://upload-images.jianshu.io/upload_images/9734328-b35c092408429cd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+#### 转换风格
+
+![转换风格](https://upload-images.jianshu.io/upload_images/9734328-f578808cdda2a6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ### API使用与输出
 1. 百度云通用物体和场景识别API
