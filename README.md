@@ -55,6 +55,9 @@
 
 ![转换风格](https://upload-images.jianshu.io/upload_images/9734328-f578808cdda2a6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+### 产品架构图
+
+![产品架构图.png](https://upload-images.jianshu.io/upload_images/9734328-df041c75c45b4a3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### API使用与输出
 1. 百度云通用物体和场景识别API
