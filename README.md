@@ -60,19 +60,22 @@
 
 #### 拍照识别流程图
 
-![拍照识别](https://upload-images.jianshu.io/upload_images/9734328-2118085d065481f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![拍照识别流程](https://upload-images.jianshu.io/upload_images/9734328-863e94e158018540.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
 
 #### 查看相册
 
-![查看相册](https://upload-images.jianshu.io/upload_images/9734328-71b8891fe3a5f5df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![查看相册流程](https://upload-images.jianshu.io/upload_images/9734328-76a8466fac440319.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 查找图片流程图
 
-![查找图片](https://upload-images.jianshu.io/upload_images/9734328-b35c092408429cd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![查找图片流程](https://upload-images.jianshu.io/upload_images/9734328-e2f5033f6ce177a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 图片转换风格流程图
 
-![转换风格](https://upload-images.jianshu.io/upload_images/9734328-f578808cdda2a6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![转换风格流程](https://upload-images.jianshu.io/upload_images/9734328-7cb6487fc2eb2338.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 信息设计
 
@@ -87,6 +90,13 @@
 ### 产品架构图
 
 ![产品架构图.png](https://upload-images.jianshu.io/upload_images/9734328-df041c75c45b4a3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 原型文档
+* 原型链接：[印相app原型](http://nfunm072.gitee.io/api-app)
+* 原型下载：[原型下载链接](https://gitee.com/NFUNM072/api-app)
+
+### 口头操作说明
+> 本产品是一个智能手机相册app，使用了2个人工智能api--通用物体和场景识别api、图像风格转换api。第一个功能为app通过通用物体和场景识别api识别图片主题内容给图片添加标签，操作流程为用户[拍摄照片](http://nfunm072.gitee.io/api-app/#g=1&p=拍照)后，等待app分析，得到[分析结果](http://nfunm072.gitee.io/api-app/#g=1&p=识别结果)后点击保存即可添加此有标签的图片。接下来用户就可以在[搜索图片页面](http://nfunm072.gitee.io/api-app/#g=1&p=查找图片)输入标签找到自己想要的图片。第二个功能为一键转换图片的风格，操作流程为用户[选择想要转换风格的图片](http://nfunm072.gitee.io/api-app/#g=1&p=转换风格)，然后在[选择风格页面](http://nfunm072.gitee.io/api-app/#g=1&p=选择风格)中选择想要转换的风格，即可得到转换风格后的图片。
 
 ## API使用与输出展示
 
@@ -160,31 +170,45 @@ if response:
 
 ![示例图片](https://upload-images.jianshu.io/upload_images/9734328-f41819b23b0435f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![转换结果](https://upload-images.jianshu.io/upload_images/9734328-4934cc515686e0f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-### API概率性
+
 
 
 ### 使用对比分析
-* 腾讯云图像分析api
+#### 腾讯云图像分析api
 > 使用链接：https://cloud.tencent.com/product/tiia
 
 ![腾讯云图像分析api](https://upload-images.jianshu.io/upload_images/9734328-3ce08b55d59c7cce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 阿里云图像识别api
+#### 阿里云图像识别api
 > 使用链接：https://ai.aliyun.com/image?spm=5176.224200.100.129.378e6ed64FHJPe&aly_as=1V0J2MRH
 
 ![阿里云图像识别api](https://upload-images.jianshu.io/upload_images/9734328-35ce181506335927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 百度云通用物体和场景识别api
+#### 百度云通用物体和场景识别api
 > 使用链接：https://ai.baidu.com/tech/imagerecognition/general
 
 ![百度云通用物体和场景识别api](https://upload-images.jianshu.io/upload_images/9734328-014c1eb698f1ffb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 对比分析
+#### 对比分析
 1. 通过3家图像识别api对同一张图片分析的结果可以看出，百度云通用物体和场景识别api识别出正确结果的概率大于其他2家api。
 2. 价格方面，腾讯云与阿里云收费都为2.5元/千张，百度云的收费为2元/千张，低于其他2家。
 
-* 总结
+#### 总结
 1. 虽然百度云通用物体和场景识别api在使用中也会出现识别出错的情况，但对比市场上其他相同类型的图像识别api，识别出正确结果的概率要大一些，而且价格方面也比其他的低，因此本app选择百度云通用物体和场景识别api作为主要功能使用的api。
 2. 本app使用的另一个api为百度云图像风格转换api，查找了其他云平台，没有发现有类似的api，但此api不是分析类型的api，因此不会出现出错的情况。
+
+### 使用后风险报告
+#### 百度云通用图像与场景识别api
+* 准确性：通过对比百度云通用图像与场景识别api和其他2家相同类型图像识别api，发现百度云通用图像与场景识别api识别出正确结果的概率大于其他2家。
+* 价格：价格方面百度云通用图像与场景识别api为2元/千张，而其他2家都为2.5元/千张。
+* 总结而言，百度云通用图像与场景识别api不管在准确性还是在价格方面上对比其他2家都有优势，但百度云通用图像和场景识别api也会出现识别错误的情况。
+#### 百度云图像风格转换api
+* 市场上没有其他云平台有类似百度云图像风格转换的api，百度云图像风格api因为其类型不是分析类型，因此不会出现错误的情况。
+
+### 加分项
+* 百度云通用图像与场景识别api：[调用链接](https://ai.baidu.com/ai-doc/IMAGERECOGNITION/Xk3bcxe21)
+* 百度云图像风格转换api：[调用链接](https://ai.baidu.com/ai-doc/IMAGEPROCESS/xk3bclo77)
+
+
 
 
